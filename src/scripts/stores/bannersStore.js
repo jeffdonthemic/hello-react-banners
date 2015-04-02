@@ -41,7 +41,7 @@ var bannersStore  = Reflux.createStore({
 
   // callback for toggle action
   toggle: function(bannerId) {
-    var banner = _.where(_banners, { 'id': bannerId })[0];
+    var banner = this.getBanner(bannerId);
     // toggle the banner status in the obect
     banner.active = banner.active === 'Yes' ? 'No' : 'Yes';
     // pass the data on to any listeners -- see toggleStatus in view.js)
